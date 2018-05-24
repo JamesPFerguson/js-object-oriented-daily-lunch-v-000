@@ -57,3 +57,29 @@ class Customer {
     }, 0);
   }
 }
+
+
+class Meal {
+  constructor(title, price){
+    this.title = title;
+    this.price = price;
+    this.id = mealId++;
+    store.meals.push(this);
+  }
+
+
+  deliveries(){
+    return store.deliveries.filter(delivery => delivery.mealId === this.id);
+  }
+
+  customers(){
+    return this.deliveries().map(delivery => delivery.customer())
+  }
+
+  static byPrice() {
+    return store.meals.sort(function (meal1, meal2){
+      return meal2.price > meal1.price
+    });
+  }
+  
+}
