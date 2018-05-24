@@ -36,4 +36,12 @@ class Customer {
     this.id = ++customerId;
     store.customers.push(this);
   }
+
+  deliveries(){
+    return store.deliveries.filter(delivery => delivery.customerId === this.id)
+  }
+
+  meals(){
+    return this.deliveries().map(delivery => delivery.meal())
+  }
 }
