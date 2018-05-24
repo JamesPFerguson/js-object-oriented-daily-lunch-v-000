@@ -33,25 +33,27 @@ class Neighborhood {
 }
 
 class Customer {
-  constructor(name, neighborhoodId) {
+
+  constructor(name, neighborhoodId){
     this.name = name;
     this.neighborhoodId = neighborhoodId;
-    this.id = customerId++;
+    this.id = ++customerId;
     store.customers.push(this);
   }
 
   deliveries(){
-    return store.deliveries.filter(delivery => delivery.customerId === this.id)
+    return store.deliveries.filter(delivery => delivery.customerId === this.id);
   }
+
 
   meals(){
     return this.deliveries().map(delivery => delivery.meal())
   }
 
-  totalSpent(){
-    return this.meals().reduce(function (accumulator, meal)) {
-      return accumulator + meal.price;
-    }
-  }
 
+  totalSpent(){
+    return this.meals().reduce(function (accumulator, meal){
+      return accumulator + meal.price;
+    };
+  }
 }
