@@ -2,9 +2,9 @@
 let store = { neighborhoods: [], meals: [], customers: [], deliveries: [] };
 
 let neighborhoodId = 0;
-let mealsId = 0;
-let customersId = 0;
-let deliveriesId = 0;
+let mealId = 0;
+let customerId = 0;
+let deliverieId = 0;
 
 class Neighborhood {
   constructor(name){
