@@ -44,4 +44,10 @@ class Customer {
   meals(){
     return this.deliveries().map(delivery => delivery.meal())
   }
+
+  totalSpent(){
+    return this.meals().reduce(function (accumulator, meal)) {
+      return accumulator + meal.price;
+    }
+  }
 }
