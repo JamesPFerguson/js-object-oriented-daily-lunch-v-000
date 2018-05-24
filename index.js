@@ -6,28 +6,28 @@ let mealsId = 0;
 let customersId = 0;
 let deliveriesId = 0;
 
-class Neighborhood{
-
-  constructor(name){
-    this.name = name
-    this.id = neighborhoodId++;
-    store.neighborhoods.push(this)
-  }
-
-  deliveries() {
-    return store.deliveries.filter(delivery => { return delivery.neighborhoodId == this.id});
-  }
-
-    customers() {
-      return store.customers.filter(customer => { return customer.neighborhoodId == this.id});
-    }
-
-    meals() {
-      let meals = this.deliveries().map(delivery => delivery.meal());
-      return meals.filter(function(meal, index, meals) {return meals.indexOf(meal) === index;
-    }
-
-}
+// class Neighborhood{
+//
+//   constructor(name){
+//     this.name = name
+//     this.id = neighborhoodId++;
+//     store.neighborhoods.push(this)
+//   }
+//
+//   deliveries() {
+//     return store.deliveries.filter(delivery => { return delivery.neighborhoodId == this.id});
+//   }
+//
+//     customers() {
+//       return store.customers.filter(customer => { return customer.neighborhoodId == this.id});
+//     }
+//
+//     meals() {
+//       let meals = this.deliveries().map(delivery => delivery.meal());
+//       return meals.filter(function(meal, index, meals) {return meals.indexOf(meal) === index;
+//     }
+//
+// }
 
 // class Customer {
 //   constructor(name, neighborhoodId) {
