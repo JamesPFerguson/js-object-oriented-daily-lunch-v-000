@@ -15,11 +15,11 @@ class Neighborhood{
   }
 
   deliveries() {
-    return store.deliveries.filter(delivery => delivery.neighborhoodId === this.id});
+    return store.deliveries.filter(delivery => delivery.neighborhoodId === this.id);
   }
 
     customers() {
-      return store.customers.filter(customer => customer.neighborhoodId == this.id});
+      return store.customers.filter(customer => customer.neighborhoodId === this.id);
     }
 
     meals() {
