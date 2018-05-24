@@ -26,7 +26,7 @@ class Neighborhood{
       let meals = this.deliveries().map(delivery => delivery.meal());
       return meals.filter(function(meal, index, meals) {return meals.indexOf(meal) === index;
     });
-
+  }
 }
 
 // class Customer {
